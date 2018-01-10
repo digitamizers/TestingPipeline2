@@ -1,9 +1,12 @@
 FROM maven:3.5.2-jdk-8
 
-COPY . /usr/src/app
+WORKDIR /usr/src/app
+
+COPY . .
 
 EXPOSE 80
 
+RUN mvn install
 RUN mvn compile
 RUN mvn package
 
