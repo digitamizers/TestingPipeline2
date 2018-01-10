@@ -6,8 +6,7 @@ COPY . .
 
 EXPOSE 80
 
-RUN mvn install
-RUN mvn compile
+RUN mvn clean
 RUN mvn package
 
 CMD ["java", "-jar", "target/gs-rest-service-0.1.0.jar"]
